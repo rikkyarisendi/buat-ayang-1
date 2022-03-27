@@ -1,371 +1,395 @@
-:root {
-  --warna-bg: rgba(0, 0, 0, 0.15);
-  --warna-teks: white;
-  --bingkai: 5px;
-}
-body {
-  background-color: #ffffff;
-  font-family: "Work Sans", sans-serif;
-  padding: 25px;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-a {
-  text-decoration: none;
-}
-body::before {
-  content: "\00A9  made with ❤️ by Rikky Arisendi";
-  color: rgb(5, 5, 5);
-  opacity: 0.5;
-  font-size: 1.5vw;
-  position: fixed;
-  bottom: 25px;
-  left: 25px;
-}
-#bodyblur {
-  opacity: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: -1;
-  transition: all 1s ease;
-}
-@keyframes jj {
-  0% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
-#bodyblur img {
-  animation-name: jj;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='UTF-8'/>
+    <meta name="description" content="ini adalah sebuah virtual gift buat ayang :3 ">
+    <meta name="keywords" content="Bucin, HBD, Happy birthday">
+    <meta name="author" content="Rikky Arisendi">
+    <meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+    <title>Buat Dinda Tersayang !!!!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400" rel="stylesheet" /><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script><script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script><link href="css/style.css" rel="stylesheet" type="text/css" /><script type="application/javascript" src="js/script.js"></script>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+  </head>
+  <body>
+    <div id="bodyblur">
+      <img id="wallpaper" src="" width="100%" height="100%" />
+    </div>
+    <div id='Content'>
+      <p id="idgeser"></p>
+      <div>
+        <blockquote id='bq'>
+          <img id="foto1" src="" />
+          <img id="foto2" src="" />
+          <img id="foto3" src="" />
+          <img id="foto4" src="" />
+          <img id="foto5" src="" />
+          <img id="foto6" src="" />
+          <p id="katakata"></p>
+          <p id="katabawah"></p>
+          <p id="akhiran" onClick="menuju();">[ &#127873 Ambil hadiahnya disini yang &#127873; ]</p>
+        </blockquote>
+      </div>
+      <div id="contTom" style="display:none;">
+        <a id="By" class='button' onClick="terima()">
+          </i>Lanjut </a>
+        <b id='buttonv2'></b>
+        <a id="Bn" class='button' onClick="tolak()">
+          </i>Ga sama sekali </a>
+      </div>
+    </div>
+    <script>
+      const body = document.querySelector("body");
 
-@keyframes leaves {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0.8);
-  }
-}
-#lope,
-.lopdeg {
-  animation: leaves 1s ease-in-out infinite alternate;
-  -webkit-animation: leaves 1s ease-in-out infinite alternate;
-}
-.lovein:hover {
-  transform: scale(1.3);
-}
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "fas fa-heart";
+        heart.style.left = (Math.random() * 90) + "vw";
+        heart.style.animationDuration = (Math.random() * 3) + 2 + "s";
+        body.appendChild(heart);
+      }
+      setInterval(function name(params) {
+        var heartArr = document.querySelectorAll(".fa-heart");
+        if (heartArr.length > 100) {
+          heartArr[0].remove()
+        }
+      }, 100);
+    </script>
+    <script>
+      function nonFo() {
+        document.getElementById('idfoto').style.display = "none";
+      }
 
-@keyframes kont {
-  0% {
-    left: -1px;
-    top: -3px;
-  }
-  50% {
-    left: 1px;
-    top: 3px;
-  }
-  100% {
-    left: -1px;
-    top: -3px;
-  }
-}
-blockquote {
-  opacity: 0;
-  visibility: hidden;
-  transition: all 1s ease;
-  position: relative;
-  margin-top: 120px;
-  margin-left: 0;
-  margin-right: 0;
-}
-blockquote {
-  width: 400px;
-  background: var(--warna-bg);
-  color: var(--warna-teks);
-  font-size: 18px;
-  font-weight: 700;
-  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
-  text-align: center;
-  line-height: 1.3em;
-  padding: 16px 35px 16px 35px;
-  border: 1px solid var(--warna-teks);
-  border-radius: var(--bingkai);
-}
-blockquote p:first-child {
-  font-size: 18px;
-  font-weight: 700;
-  text-align: center;
-}
-p {
-  margin: 1.5em 0;
-  transition: all 0.3s ease;
-}
-#bq img {
-  display: none;
-  width: 120px;
-  height: 120px;
-  margin: 20px 0 0 0;
-}
-#bq img:first-child {
-  display: inline-flex;
-}
-#akhiran {
-  display: none;
-  color: #ffc700;
-  font-size: 12px;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.55);
-  text-shadow: 0px;
-  padding: 10px;
-  border-radius: var(--bingkai);
-  line-height: 10px;
-  transition: all 0.2s ease;
-}
-#akhiran:hover {
-  transform: scale(0.9);
-  opacity: 0.5;
-}
+      function showFo() {
+        document.getElementById('idfoto').style.display = "block";
+      }
 
-#pergeseran {
-  opacity: 0;
-  visibility: hidden;
-  transition: all 1s ease;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: relative;
-  max-width: 500px;
-  padding: 0 20px;
-  overflow-y: hidden;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch;
-}
-#pergeseran p {
-  background: #003a76;
-  color: white;
-  border: 1px dashed #fff;
-  border-radius: 8px;
-  padding: 8px;
-  display: flex;
-  flex-wrap: nowrap;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 700;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 90%;
-  min-height: 130px;
-  margin: 0 15px 0 0;
-  scroll-snap-align: center;
-}
-#pergeseran > *:last-child {
-  margin-right: 0;
-}
-#pergeseran:after {
-  content: "";
-  display: block;
-  flex-shrink: 0;
-  align-self: stretch;
-  padding-left: 20px;
-}
-#pergeseran p b {
-  display: block;
-}
-#pergeseran p b img {
-  width: 80px;
-  height: 80px;
-  margin: 20px 0;
-}
-/*#pergeseran p b span{display:flex;}*/
-#tm {
-  color: #ffb400;
-  transition: all 0.5s ease;
-}
-#tm:hover {
-  transform: scale(0.7);
-}
-#idgeser {
-  position: relative;
-  top: 30vh;
-  font-size: 17px;
-  color: white;
-}
+      function nonDiv() {
+        document.getElementById('Content').style = "opacity:0;visibility:hidden;margin-top:30vh;";
+      }
 
-#contTom {
-  margin: 0;
-  display: flex;
-  align-items: left;
-  list-style: none;
-}
-.button {
-  display: inline-flex;
-  align-items: center;
-  margin: 0;
-  margin: 12px 8px 12px 0;
-  transition: all 0.3s ease;
-  padding: 10px 15px;
-  outline: 0;
-  border: 1px solid var(--warna-teks);
-  border-radius: var(--bingkai);
-  line-height: 20px;
-  background: var(--warna-bg);
-  color: var(--warna-teks);
-  font-size: 15px;
-  font-weight: 700;
-  white-space: nowrap;
-  overflow: hidden;
-  z-index: 1;
-}
-.button:hover {
-  transform: scale(0.9);
-  opacity: 0.98;
-}
-#buttonv2 {
-  position: absolute;
-  font-size: 15px;
-  color: white;
-  background: var(--warna-bg);
-  padding: 10px;
-  border-radius: 8px;
-  line-height: 10px;
-  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
-  opacity: 0;
-}
+      function showDiv() {
+        Bn.style = "display:none";
+        setTimeout(kpemb, 100);
+        document.getElementById('Content').style = "opacity:1;margin-top:4vh;animation:kont 3s infinite;";
+        document.getElementById("katakata").innerHTML = kata1;
+      }
 
-.lovein {
-  font-size: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-.lovein svg {
-  width: 80px;
-  height: 80px;
-  fill: #fefefe;
-}
+      function loadfoto() {
+        document.getElementById('foto1').src = gambar1;
+        document.getElementById('foto2').src = gambar2;
+        document.getElementById('foto3').src = gambar3;
+        document.getElementById('foto4').src = gambar4;
+        document.getElementById('foto5').src = gambar5;
+        document.getElementById('foto6').src = gambar6;
+      }
 
-.content2 {
-  display: block;
-  text-align: center;
-  width: 100%;
-  height: 180px;
-  margin-top: 50px;
-}
-.content2 > * {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 15px;
-  font-size: 17px;
-  color: white;
-}
-.image img {
-  border-radius: 10%;
-  transform: scale(0.1);
-  transition: all 0.8s ease;
-}
-#k2 .image > * {
-  margin-bottom: 40px;
-}
-#k2 {
-  font-weight: 700;
-  font-size: 17px;
-  color: white;
-  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
-}
-#final1 {
-  transition: all 3s ease;
-}
+      function showAkhir() {
+        setInterval(createHeart, 200);
+        document.getElementById('k2').style = "opacity:1;transform:scale(1);margin:0;";
+        document.getElementById('ftdua').style = "transform:scale(1);";
+        document.getElementById('final1').style = "transform:scale(1);";
+        document.getElementById('Content').style.display = "none";
+      }
 
-#idkirim {
-  font-size: 13px;
-  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
-  color: white;
-  transition: all 0.5s ease;
-}
-#idkirim {
-  opacity: 0;
-  visibility: hidden;
-  margin-top: 100px;
-}
-#idkirim:hover {
-  transform: scale(0.8);
-}
+      function mulaiakhir() {
+        nonDiv();
+        setTimeout(showAkhir, 1400);
+        setTimeout(finalis, 2400);
+      }
 
-.content2 {
-  display: none;
-}
-#Content,
-#k2 {
-  animation-name: none;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  position: relative;
-  opacity: 0;
-  margin-top: 50px;
-  width: 100%;
-  height: 180px;
-  transition: all 1.8s ease;
-}
-#Content > *,
-#k2 > * {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  margin-top: 15px;
-}
-#k2,
-#final1 {
-  transform: scale(0.1);
-}
+      function showTom() {
+        document.getElementById('idkirim').style = "opacity:1;visibility:visible;margin-top:140px;";
+      }
 
-.swal2-title {
-  margin-right: 20px;
-  margin-left: 20px;
-  font-size: 20px;
-  text-align: center;
-  padding: 15px 30px 0 30px;
-}
-.swal2-modal {
-  background: rgba(255, 255, 255, 0.99);
-  border: 0.7px solid #000;
-  border-radius: var(--bingkai); /*top:-60px;*/
-}
+      function tombol() {
+        contTom.style = "display:flex";
+      }
 
-.fa-heart {
-  opacity: 0.3;
-  color: white;
-  font-size: 30px;
-  position: absolute;
-  animation: heartMove linear 1;
-  top: -10vh;
-  z-index: 0;
-}
-@keyframes heartMove {
-  0% {
-    transform: translateY(-10vh);
-  }
-  100% {
-    transform: translateY(100vh);
-  }
-}
+      function akhiran() {
+        document.getElementById("akhiran").style = "display:inline-flex";
+      }
+
+      function otomatis() {
+        befanimkata();
+        setTimeout(animkata, 400);
+        contTom.style = "display:none";
+        setTimeout(tombol, 1200);
+      }
+
+      function befanimkata() {
+        katakata.style = "transform:scale(.01);";
+        katabawah.style = "transform:scale(.01);";
+      }
+
+      function animkata() {
+        katakata.style = "transform:scale(1);";
+        katabawah.style = "transform:scale(1);";
+      }
+
+      function animakhir() {
+        akhiran.style = "display:block;";
+      }
+      async function terimateks() {
+        By.innerHTML = "Iya pakek Banget";
+        Bn.style = "display:flex";
+        setTimeout(animkata, 400);
+        setTimeout(kats, 1500);
+      }
+      async function tolakteks() {
+        await swalst.fire('' + teksnolak);
+      }
+      var aa = 0,
+        pemb;
+      pemb = "";
+      var ii = 0,
+        katanya;
+      katanya = "";
+      var i = 0,
+        katanyab;
+      katanyab = "";
+      var u = 0,
+        text2;
+      text2 = "";
+      var o = 0,
+        text3;
+      text3 = "";
+      var a = 0,
+        final1;
+      final1 = "";
+      var ab = 0,
+        final2;
+      final2 = "";
+
+      function kpemb() {
+        if (aa < pemb.length) {
+          document.getElementById("idgeser").innerHTML += pemb.charAt(aa);
+          aa++;
+          setTimeout(kpemb, 40);
+        }
+        if (aa == pemb.length) {
+          setTimeout(tombol, 1200);
+          document.getElementById("idgeser").style = "display:none";
+          document.getElementById("bq").style = "opacity:1;visibility:visible;margin-top:0";
+          document.getElementById('bodyblur').style = "opacity:1;";
+        }
+      }
+
+      function kats() {
+        if (ii < katanya.length) {
+          document.getElementById("katabawah").innerHTML += katanya.charAt(ii);
+          ii++;
+          setTimeout(kats, 80);
+        }
+        if (ii == katanya.length) {
+          document.getElementById("katabawah").innerHTML = katanya + emotsenyum;
+          setTimeout(tombol, 800);
+        }
+      }
+
+      function kbwh() {
+        if (i < katanyab.length) {
+          document.getElementById("katabawah").innerHTML += katanyab.charAt(i);
+          i++;
+          setTimeout(kbwh, 180);
+        }
+        if (i == katanyab.length) {
+          document.getElementById("katabawah").innerHTML = katanyab + emotsenyum;
+          setTimeout(tombol, 800);
+        }
+      }
+      flag = 1;
+      flagg = 1;
+
+      function tolak() {
+        if (fungsi == 1) {
+          if (flagg == 1) {
+            Bn.style = "margin-left:90px;transform: rotate(45deg)";
+            buttonv2.style = "opacity:1;";
+            By.style = "opacity:0";
+            document.getElementById("buttonv2").innerHTML = tekstolak1;
+            flagg = 2
+          } else if (flagg == 2) {
+            Bn.style = "margin-left:95px;transform: rotate(135deg)";
+            document.getElementById("buttonv2").innerHTML = tekstolak2;
+            flagg = 3
+          } else if (flagg == 3) {
+            Bn.style = "margin:12px 8px 12px 0;transform: rotate(360deg)";
+            buttonv2.style = "opacity:0;";
+            By.style = "opacity:1";
+            flagg = 1
+          }
+        } else if (fungsi == 5) {
+          if (flag == 1) {
+            Bn.style = "margin-left:90px;";
+            buttonv2.style = "opacity:1;";
+            By.style = "opacity:0";
+            document.getElementById("buttonv2").innerHTML = tekstolak11;
+            flag = 2
+          } else if (flag == 2) {
+            Bn.style = "margin-left:95px;transform: rotate(90deg)";
+            document.getElementById("buttonv2").innerHTML = tekstolak22;
+            flag = 3
+          } else if (flag == 3) {
+            Bn.style = "margin:12px 8px 12px 0";
+            buttonv2.style = "opacity:0;";
+            By.style = "opacity:1";
+            flag = 1
+          }
+        }
+      }
+      tekstolak1 = "Eits &#128541;";
+      tekstolak11 = "Yakin?";
+      tekstolak2 = "Gabisa &#128541;";
+      tekstolak22 = "Eits &#128541;";
+      teksnolak = "Harus kangen!!! &#128541;";
+      fungsi = 1;
+      async function terima() {
+        if (fungsi == 1) {
+          foto1.style = "display:none";
+          foto2.style = "display:inline-flex";
+          katakata.innerHTML = kata2;
+          otomatis();
+          fungsi = 2
+        } else if (fungsi == 2) {
+          foto2.style = "display:none";
+          foto3.style = "display:inline-flex";
+          katakata.innerHTML = kata3;
+          otomatis();
+          fungsi = 3
+        } else if (fungsi == 3) {
+          foto3.style = "display:none";
+          foto4.style = "display:inline-flex";
+          katakata.innerHTML = kata4;
+          otomatis();
+          fungsi = 4
+        } else if (fungsi == 4) {
+          foto4.style = "display:none";
+          foto5.style = "display:inline-flex";
+          katakata.innerHTML = kata5;
+          terimateks();
+          befanimkata();
+          setTimeout(animkata, 400);
+          contTom.style = "display:none";
+          fungsi = 5
+        } else if (fungsi == 5) {
+          foto5.style = "display:none";
+          foto6.style = "display:inline-flex";
+          katakata.innerHTML = katakhir;
+          document.getElementById("katabawah").innerHTML = katakhirb;
+          befanimkata();
+          setTimeout(animkata, 400);
+          contTom.style = "display:none";
+          setTimeout(akhiran, 3300);
+          setInterval(createHeart, 200);
+        }
+      }
+    </script>
+    <script type="text/javascript">
+      const swals = Swal.mixin({
+        allowOutsideClick: false,
+        cancelButtonColor: '#FF0040',
+      });
+      const swalsy = Swal.mixin({
+        confirmButtonText: 'Iya',
+        allowOutsideClick: false,
+      });
+      const swalst = Swal.mixin({
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        timer: 1000,
+        timerProgressBar: true,
+      });
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0');
+      var yyyy = today.getFullYear();
+      const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+      today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;
+
+      function play() {
+        var audio = new Audio('' + linklagu);
+        audio.play();
+      }
+      async function menuju() {
+        if (fungsi == 5) {
+          await swals.fire('berdoa dulu ya sayang. . .');
+          window.location = "https://rikkyarisendi.github.io/buat-ayang-2/";
+        }
+      }
+      async function mulaitanya() {
+        var {
+          isConfirmed: tanyawal
+        } = await swals.fire({
+          title: `Mau isi nama dulu atau langsung aja?`,
+          imageUrl: 'https://i.ibb.co/N6PTcqX/heart-happy.gif',
+          imageWidth: 120,
+          imageHeight: 120,
+          confirmButtonText: 'Isi Nama',
+          cancelButtonText: 'Langsung Aja',
+          allowOutsideClick: false,
+          showCancelButton: true,
+        });
+        if (tanyawal) {
+          mulai();
+        } else {
+          nama = 'Kamu';
+          apapun();
+          play();
+        }
+      }
+      async function mulai() {
+        var {
+          value: nama
+        } = await swals.fire({
+          title: 'Masukin nama kamu',
+          input: 'text',
+          imageUrl: 'https://i.ibb.co/N6PTcqX/heart-happy.gif',
+          imageWidth: 120,
+          imageHeight: 120,
+          allowOutsideClick: false,
+          showCancelButton: false,
+        });
+        if (nama && nama.length < 11) {
+          window.nama = nama;
+          apapun();
+          play();
+        } else {
+          await swals.fire('Ups!', 'Nama tidak boleh kosong atau lebih dari 10 karakter, ya!');
+          mulai();
+        }
+      }
+      async function tanpanama() {
+        nama = "Kamu";
+        window.nama = nama;
+        apapun();
+      }
+      //GANTI SEMUA TEKS, PESAN WHATSAPP, DAN AUDIO DI SINI
+      async function apapun() {
+        await swals.fire('Pasti kepo banget ya apa ini isinya.');
+        pemb = "....         ";
+        wallpaper.src = "#";
+        gambar1 = "https://i.ibb.co/4Ppd5jv/snuggles-caring-1.gif";
+        kata1 = "Ayaaangggg &#10084;";
+        gambar2 = "https://i.ibb.co/mtWVxKH/gigit.gif";
+        kata2 = "Jangan senyum-senyum dulu eh wkwk";
+        gambar3 = "https://i.ibb.co/cT3t21h/tkthao219-bubududu-2.gif";
+        kata3 = "Jadi gini yang berhubung kita itu terbatas ruang dan waktu";
+        gambar4 = "https://kamu.feeldream.repl.co/g4.gif";
+        kata4 = "Aku pikir dengan cara ini juga gada salahnya jadi disini aja yaa. .";
+        gambar5 = "https://kamu.feeldream.repl.co/g5.gif";
+        kata5 = "Sebenernya aku mau ngucapin ini secara langsung kalo ketemu, dan quality time lagi tapi kenyataan berkata tidak huhu :(";
+        katanya = "Ayaaanggg kangen ga? pengen ketemu ga? ";
+        emotsenyum = "&#128577;";
+        gambar6 = "https://i.ibb.co/JyKdNBp/yeay.gif";
+        katakhir = "Iya tapi sabar ya sayang, nunggu waktu yang tepat lagi &#10084;";
+        katakhirb = "pokoknya kita bakal ketemu lagi, I Love You &#10084;&#10084;&#10084;";
+        linklagu = 'https://Kamu.feeldream.repl.co/faudio.mp3';
+        showDiv();
+        loadfoto();
+        play();
+      }
+      apapun();
+    </script>
+  </body>
+</html>
