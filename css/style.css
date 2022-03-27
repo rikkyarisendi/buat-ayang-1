@@ -4,7 +4,7 @@
   --bingkai: 5px;
 }
 body {
-  background-color: #ebebeb;
+  background-color: #ffffff;
   font-family: "Work Sans", sans-serif;
   padding: 25px;
   -webkit-user-select: none;
@@ -16,7 +16,7 @@ a {
 }
 body::before {
   content: "\00A9  made with ❤️ by Rikky Arisendi";
-  color: white;
+  color: rgb(5, 5, 5);
   opacity: 0.5;
   font-size: 1.5vw;
   position: fixed;
